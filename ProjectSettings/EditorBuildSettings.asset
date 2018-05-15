@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ForestMap.unity
+    guid: 8295bb036943eb242bc5fbf80cc3cd78
+  - enabled: 1
     path: Assets/Bosque.unity
     guid: ffe4c4f1dd3f06a45854f19cab21d11b
   - enabled: 1
     path: Assets/Forest Scene.unity
     guid: 7769f33fb4fa2e5458344a36556ad760
-  - enabled: 1
-    path: Assets/ForestMap.unity
-    guid: 8295bb036943eb242bc5fbf80cc3cd78
   m_configObjects: {}

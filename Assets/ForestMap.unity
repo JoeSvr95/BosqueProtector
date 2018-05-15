@@ -624,11 +624,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 257015289}
+      objectReference: {fileID: 194018680}
     - target: {fileID: 114432964732705800, guid: a661b9ab449cd8c45ae91b73d066dc1d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
+      value: GoToVisualizer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a661b9ab449cd8c45ae91b73d066dc1d, type: 2}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class BtnFunctions : MonoBehaviour {
 
@@ -15,6 +15,7 @@ public class BtnFunctions : MonoBehaviour {
 	}
 
 	public void GoToVisualizer() {
-		Debug.Log("Visualizer estacion " + station);
+		// Esta función llama al visualizer correspondiente.
+		SceneManager.LoadScene("Forest Scene");
 	}
 }
