@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Bosque.unity
+- path: Assets/Scenes/MapaEstaciones.unity
   isLoaded: 1
   isActive: 1
