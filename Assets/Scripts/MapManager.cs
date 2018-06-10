@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour {
 	public Character character;
@@ -30,7 +30,7 @@ public class MapManager : MonoBehaviour {
 		} else if (Input.GetKeyUp(KeyCode.RightArrow)){
 			character.TrySetDireccion(Direccion.Derecha);
 		} else if (Input.GetKeyUp(KeyCode.Return)){
-			SceneManager.LoadScene("Forest Scene");
+			SceneManager.LoadScene("Bosque");
 		}
 	}
 
