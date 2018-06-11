@@ -14,7 +14,7 @@ public class Pin : MonoBehaviour {
 	[Header("Opciones")]
 	public bool EsAutomatico;
 	public bool HideIcono;
-	public string Estacion;
+	public Estacion estacion;
 
 	[Header("Pins")]
 	public Pin PinArriba;

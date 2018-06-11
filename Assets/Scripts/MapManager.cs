@@ -30,12 +30,12 @@ public class MapManager : MonoBehaviour {
 		} else if (Input.GetKeyUp(KeyCode.RightArrow)){
 			character.TrySetDireccion(Direccion.Derecha);
 		} else if (Input.GetKeyUp(KeyCode.Return)){
-			SceneManager.LoadScene("Bosque");
+			GameManager.instance.LoadScene(character.PinActual.estacion.ID);
 		}
 	}
 
 	public void UpdateGUI(){
-		Estacion.text = string.Format("Estacion: {0}", character.PinActual.Estacion);
+		Estacion.text = string.Format("Estacion: {0}", character.PinActual.estacion.ID);
 	}
 
 }
