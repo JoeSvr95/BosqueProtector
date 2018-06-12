@@ -23970,6 +23970,10 @@ Prefab:
       propertyPath: estacion
       value: 
       objectReference: {fileID: 1438779028}
+    - target: {fileID: 1627809228695068, guid: 9c247b1435b65e64f915153e475b9b01, type: 2}
+      propertyPath: m_TagString
+      value: Spawn
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9c247b1435b65e64f915153e475b9b01, type: 2}
@@ -35945,7 +35949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7e6b8c6d5b4b14aad74d179b2a3e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 209200320}
   spawnArray: []
   estacionActual: 0
 --- !u!4 &980018511
@@ -64176,6 +64180,10 @@ Prefab:
       propertyPath: estacion
       value: 
       objectReference: {fileID: 1699186801}
+    - target: {fileID: 1627809228695068, guid: 9c247b1435b65e64f915153e475b9b01, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9c247b1435b65e64f915153e475b9b01, type: 2}

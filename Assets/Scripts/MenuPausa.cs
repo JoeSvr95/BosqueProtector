@@ -34,6 +34,6 @@ public class MenuPausa : MonoBehaviour {
 	}
 
 	public void MenuMapa(){
-		SceneManager.LoadScene(0);
+		GameManager.instance.LoadScene(1);
 	}
 }

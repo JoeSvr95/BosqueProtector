@@ -9,12 +9,12 @@ public class GameManager : MonoBehaviour {
 	public GameObject player;
 	public GameObject[] spawnArray;
 	public int estacionActual;
-	// Use this for initialization
+
 	void Awake () {
 		if (instance == null){
 			DontDestroyOnLoad(gameObject);
 			instance = this;
-		}else if (instance != null){
+		} else if (instance != null){
 			Destroy(gameObject);
 		}
 
@@ -27,13 +27,21 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void OnLevelWasLoaded(){
+	void OnEnable(){
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
+
+	void OnDisable(){
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+	}
+
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode){
 		player = GameObject.FindGameObjectWithTag("Player");
 		spawnArray = GameObject.FindGameObjectsWithTag("Spawn");
 
 		for (int i = 0; i < spawnArray.Length; i++){
 			if (spawnArray[i].GetComponent<Estacion>().ID == estacionActual){
-				player.transform.position = spawnArray[i].transform.position;
+				player.transform.position = (Vector3)spawnArray[i].transform.position;
 			}
 		}
 	}
@@ -42,9 +50,9 @@ public class GameManager : MonoBehaviour {
 		estacionActual = estacion;
 
 		if (SceneManager.GetActiveScene().buildIndex == 0){
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		} else if (SceneManager.GetActiveScene().buildIndex == 1){
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 		} 
 	}
 }

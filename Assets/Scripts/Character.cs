@@ -40,7 +40,6 @@ public class Character : MonoBehaviour {
 
 	public void TrySetDireccion(Direccion direccion){
 		var pin = PinActual.GetPinEnDireccion(direccion);
-
 		if (pin == null){
 			return;
 		}
