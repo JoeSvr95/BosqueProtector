@@ -10,7 +10,8 @@ public class MenuPausa : MonoBehaviour {
 	public GameObject MenuPausaUI;
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.Escape)){
+		if (Input.GetKeyDown(KeyCode.Return)){
+			
 			if (IsPaused){
 				Continuar();
 			} else {
@@ -28,12 +29,16 @@ public class MenuPausa : MonoBehaviour {
 
 	void Pause(){
 		GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = false;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 		MenuPausaUI.SetActive(true);
 		Time.timeScale = 0f;
 		IsPaused = true;
 	}
 
 	public void MenuMapa(){
-		GameManager.instance.LoadScene(1);
+		Time.timeScale = 1f;
+		GameManager.instance.estacionActual = 3;
+		GameManager.instance.LoadScene(3);
 	}
 }

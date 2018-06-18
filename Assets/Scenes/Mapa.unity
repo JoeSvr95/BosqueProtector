@@ -35949,9 +35949,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7e6b8c6d5b4b14aad74d179b2a3e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapManager: {fileID: 1360132835}
   player: {fileID: 209200320}
   spawnArray: []
   estacionActual: 0
+  escena: 0
 --- !u!4 &980018511
 Transform:
   m_ObjectHideFlags: 0
