@@ -40,7 +40,11 @@ public class GameManager : MonoBehaviour {
 	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode){
 		player = GameObject.FindGameObjectWithTag("Player");
 		spawnArray = GameObject.FindGameObjectsWithTag("Spawn");
-		mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
+		if (mapManager)
+		{
+			mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
+		}
+		
 	
 		for (int i = 0; i < spawnArray.Length; i++){
 			if (spawnArray[i].GetComponent<Estacion>().ID == estacionActual){

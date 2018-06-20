@@ -8,6 +8,8 @@ public class MapManager : MonoBehaviour {
 	public Character character;
 	public Pin PinInicio;
 	public Text Estacion;
+	private bool entro = false;
+	private string mensaje;
 
 	private void Start(){
 		character.Iniciar(this, PinInicio);
@@ -30,8 +32,21 @@ public class MapManager : MonoBehaviour {
 		} else if (Input.GetKeyUp(KeyCode.RightArrow)){
 			character.TrySetDireccion(Direccion.Derecha);
 		} else if (Input.GetKeyUp(KeyCode.Return)){
+			mensaje = "Entrando a la estación " + character.PinActual.estacion.ID;
+			entro = true;
 			GameManager.instance.LoadScene(character.PinActual.estacion.ID);
 		}
+	}
+
+	private void OnGUI()
+	{
+	    //GUIStyle myStyle = new GUIStyle();
+	    //myStyle.fontSize = 20;
+	    if (entro)
+	    {
+	    	GUI.Box(new Rect(Screen.width/2-75,Screen.height/2-25,150,50), mensaje);
+	    }
+	    
 	}
 
 	public void UpdateGUI(){
