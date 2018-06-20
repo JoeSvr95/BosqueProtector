@@ -8,10 +8,13 @@ public class MapManager : MonoBehaviour {
 	public Character character;
 	public Pin PinInicio;
 	public Text Estacion;
-	private bool entro = false;
-	private string mensaje;
+	public Text Cargando;
+	//private bool entro = false;
+	//private string mensaje;
+	public GameObject Panel;
 
 	private void Start(){
+		Panel.SetActive(false);
 		character.Iniciar(this, PinInicio);
 	}
 
@@ -32,25 +35,27 @@ public class MapManager : MonoBehaviour {
 		} else if (Input.GetKeyUp(KeyCode.RightArrow)){
 			character.TrySetDireccion(Direccion.Derecha);
 		} else if (Input.GetKeyUp(KeyCode.Return)){
-			mensaje = "Entrando a la estación " + character.PinActual.estacion.ID;
-			entro = true;
+			//mensaje = "Entrando a la estación " + character.PinActual.estacion.ID;
+			//entro = true;
+			Panel.SetActive(true);
+			Cargando.text = string.Format("Entrando a la estación: " + character.PinActual.estacion.ID);
 			GameManager.instance.LoadScene(character.PinActual.estacion.ID);
 		}
 	}
 
-	private void OnGUI()
-	{
+	//private void OnGUI()
+	//{
 	    //GUIStyle myStyle = new GUIStyle();
 	    //myStyle.fontSize = 20;
-	    if (entro)
-	    {
-	    	GUI.Box(new Rect(Screen.width/2-75,Screen.height/2-25,150,50), mensaje);
-	    }
+	    //if (entro)
+	    //{
+	    //	GUI.Box(new Rect(Screen.width/2-75,Screen.height/2-25,150,50), mensaje);
+	    //}
 	    
-	}
+	//}
 
 	public void UpdateGUI(){
-		Estacion.text = string.Format("Estacion: {0}", character.PinActual.estacion.ID);
+		Estacion.text = string.Format("Estación: {0}", character.PinActual.estacion.ID);
 	}
 
 }

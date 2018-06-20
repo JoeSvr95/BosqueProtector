@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 583, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 579, y: 450}
+  m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
-  controlID: 14615
+  controlID: 42120
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 0
     width: 1087
     height: 635
-  m_MinSize: {x: 306, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 304, y: 450}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 14616
+  controlID: 42121
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,10 +143,10 @@ MonoBehaviour:
     y: 0
     width: 1087
     height: 358
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 304, y: 200}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 14617
+  controlID: 42122
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 358
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -198,10 +198,10 @@ MonoBehaviour:
     height: 337
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5a080000
-    m_LastClickedID: 0
-    m_ExpandedIDs: f0fbffff00000000d8140000ce170000d41700006a1b0000a01b00002c1d0000c01e0000001f0000a6210000d6250000e8270000182a0000
+    scrollPos: {x: 0, y: 10832}
+    m_SelectedIDs: b22f0500
+    m_LastClickedID: 339890
+    m_ExpandedIDs: d46bf3ffe8ccf3ff0c49f4ffac57f4ff3863f5ff426bf5ff2a7cf5ff9260f6ffcc8ef9ff0c8ff9ff3c8ff9ff408ff9ffa68ff9ffa88ff9ffd28ff9ffd48ff9ffd68ff9ffea8ff9fff88ff9ff0690f9ff0890f9ff0e90f9ff1090f9ff2a90f9ff2c90f9ff6290f9ff7290f9ff8090f9ff9490f9ffb290f9ffc490f9fffe90f9ff0e91f9ff5c91f9ff6c91f9ff8091f9ff9c91f9ffae91f9ffb691f9ff8cbdf9ffa4bdf9ffd6bdf9ffe4bdf9ff06bef9ff76bef9ff60c9faff4405fbff5a05fbff8005fbff641ffbff6e1ffbff841ffbff941ffbffb41ffbffac38fbffc238fbffc838fbffd238fbffd638fbff0039fbff0439fbff3c39fbff4e39fbff5c39fbff6639fbff7c39fbffcc39fbffe839fbfffc39fbff0e3afbff1a3afbff623afbff643afbff663afbff723afbff8a3afbffa83afbffc43afbffd23afbff7ef1fbff9e88feffe66dffff3275ffffcedeffff8ef8fffff0fbffff00000000987d0000c6ae0000deae0000acde000098df0000a4df00003ae0000092e00000c8e00000e8e0000044e1000082e10000ace1000070e20000d0e20000d6e20000e8e20000fae2000040e3000058e300006ae40000aee40000dee4000056e500005ce50000c2e5000048e60000a8e60000b4e6000018e7000068e70000ece700000ae800003ae80000dee800001ae9000044e900004ae90000dae9000056ea00006eea000086ea0000c2ea0000daea0000d8ec000038ed000056ed000086ed000098ed0000daed0000e6ed000036ee00007cee000022ef000018f0000060f10000f6f100004af2000050f2000094f20000def200006af300007cf30000b2f30000d2f4000020f500007af50000e0f50000583c0300983c0300b03c0300b83c0300c243030022490300662f04007e2f040090360400f03b0400024f0400be000500d60005006c250500c6260500be270500f8290500402a05005a2b05006a2d0500a62f0500083105003036050008370500cc3e05001a40050024410500ec4105008e430500
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -278,14 +278,14 @@ MonoBehaviour:
     height: 337
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1586.3938431053866
+  lastFramingTime: 4418.817717207162
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.8472072, y: -0.013233319, z: -2.453125}
+    m_Target: {x: 0.82803035, y: 0.24889353, z: 9.826835}
     speed: 2
-    m_Value: {x: -1.8472072, y: -0.013233319, z: -2.453125}
+    m_Value: {x: 0.82803035, y: 0.24889353, z: 9.826835}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -317,9 +317,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.46725
+    m_Target: 12.244614
     speed: 2
-    m_Value: 14.46725
+    m_Value: 12.244614
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -351,10 +351,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 261
+    x: 204
     y: 92
-    width: 1337
-    height: 643
+    width: 881
+    height: 337
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 MonoBehaviour:
@@ -374,14 +374,14 @@ MonoBehaviour:
     y: 358
     width: 1087
     height: 277
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -419,19 +419,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Allan\Desktop\Practica\BosqueProtector
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 69}
-    m_SelectedIDs: 48110000
-    m_LastClickedID: 4424
+    m_SelectedIDs: 060b0000
+    m_LastClickedID: 2822
     m_ExpandedIDs: 00000000960a0000680d0000420f00004212000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5a080000
-    m_LastClickedInstanceID: 2138
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: b22f0500
+    m_LastClickedInstanceID: 339890
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000000b000024090000a82e000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -558,8 +558,8 @@ MonoBehaviour:
     y: 0
     width: 279
     height: 635
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}

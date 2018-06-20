@@ -52,7 +52,10 @@ public class GameManager : MonoBehaviour {
 				if (escena == 1){
 					player.transform.position = spawn.transform.position;
 				} else if (escena == 0){
-					mapManager.PinInicio = spawn.GetComponent<Pin>();
+					if (mapManager)
+					{
+						mapManager.PinInicio = spawn.GetComponent<Pin>();
+					}
 				}
 			}
 		}
