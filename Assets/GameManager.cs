@@ -40,22 +40,20 @@ public class GameManager : MonoBehaviour {
 	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode){
 		player = GameObject.FindGameObjectWithTag("Player");
 		spawnArray = GameObject.FindGameObjectsWithTag("Spawn");
-		if (mapManager)
-		{
-			mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
-		}
 		
-	
+		try {
+			mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
+		} catch (System.Exception e){
+			Debug.Log("MapManager not present in this scene.");
+		}
+
 		for (int i = 0; i < spawnArray.Length; i++){
 			if (spawnArray[i].GetComponent<Estacion>().ID == estacionActual){
 				GameObject spawn = spawnArray[i];
 				if (escena == 1){
 					player.transform.position = spawn.transform.position;
 				} else if (escena == 0){
-					if (mapManager)
-					{
 						mapManager.PinInicio = spawn.GetComponent<Pin>();
-					}
 				}
 			}
 		}

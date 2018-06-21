@@ -41,7 +41,6 @@ public class MenuPausa : MonoBehaviour {
 
 	public void MenuMapa(){
 		Time.timeScale = 1f;
-		GameManager.instance.estacionActual = 3;
-		GameManager.instance.LoadScene(3);
+		GameManager.instance.LoadScene(GameManager.instance.estacionActual);
 	}
 }

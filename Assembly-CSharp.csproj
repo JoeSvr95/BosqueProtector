@@ -97,11 +97,13 @@
      <Compile Include="Assets\GreenForest\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\GreenForest\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\GreenForest\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\Estacion.cs" />
      <Compile Include="Assets\Scripts\MapManager.cs" />
      <Compile Include="Assets\Scripts\MenuPausa.cs" />
      <Compile Include="Assets\Scripts\Pin.cs" />
+     <Compile Include="Assets\Scripts\WallTrigger.cs" />
      <None Include="Assets\GreenForest\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\GreenForest\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\GreenForest\PostProcessing\Resources\Shaders\Fog.shader" />
