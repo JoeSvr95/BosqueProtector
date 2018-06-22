@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/Joe/Documents/Github/BosqueProtector/WebGL
+C:/Users/Joe/Documents/Github/BosqueProtector/Build
 SceneListBegin?
 Assets/Scenes/Mapa.unity
 Assets/GreenForest/Scences/Bosque.unity
@@ -142,6 +142,7 @@ a90e94673f50d2237c1b971c138660c6 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 205965134a5874db410d674ebdf33ba7 Assembly-CSharp.dll:.ExampleWheelController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ObjectResetter
+beb9048248c35889c7bfd162195ccbdb Assembly-CSharp.dll:.SoundManager
 a610d993de3031e558f42e245ca2254c Assembly-CSharp.dll:.Pin
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -190,4 +191,3 @@ a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.AudioManager
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-beb9048248c35889c7bfd162195ccbdb Assembly-CSharp.dll:.SoundManager
