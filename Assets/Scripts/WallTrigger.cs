@@ -6,5 +6,6 @@ public class WallTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(){
 		GameManager.instance.estacionActual = station.ID;
+		GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
 	}
 }

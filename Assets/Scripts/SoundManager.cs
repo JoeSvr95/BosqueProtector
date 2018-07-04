@@ -7,16 +7,16 @@ public class SoundManager : MonoBehaviour {
 
 	public int station;
 	[DllImport("__Internal")]
-    private static extern void StartAudio();
+    private static extern void StartAudio(int station_id);
 	[DllImport("__Internal")]
 	private static extern void StopAudio();
 
 	void Start(){
-		PlayAudio();
+		PlayAudio(GameManager.instance.estacionActual);
 	}
 
-	public void PlayAudio(){
-		StartAudio();
+	public void PlayAudio(int id){
+		StartAudio(id);
 	}
 
 	public void PauseAudio(){

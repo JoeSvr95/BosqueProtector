@@ -1,6 +1,6 @@
 var csharp = {
-    StartAudio: function() {
-        start_sound();
+    StartAudio: function(station) {
+        start_sound(station);
     },
 
     StopAudio: function() {

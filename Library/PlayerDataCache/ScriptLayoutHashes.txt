@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/Joe/Documents/Github/BosqueProtector/Build
+C:/Users/HOME/Documents/GitHub/BosqueProtector/WebGLBuild
 SceneListBegin?
 Assets/Scenes/Mapa.unity
 Assets/GreenForest/Scences/Bosque.unity
