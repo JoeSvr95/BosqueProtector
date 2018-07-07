@@ -6,27 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour {
 
-	public static  bool IsPaused = false;
+	private static  bool IsPaused = false;
 	public GameObject MenuPausaUI;
 	public GameObject Panel;
 
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.Return)){
+		bool bandera = ClickMouse.IsGalery;
+		if (!bandera){
+			if (Input.GetKeyDown(KeyCode.Return)){
 			
-			if (IsPaused){
-				Continuar();
-			} else {
-				Pause();
+				if (IsPaused){
+					Continuar();
+				} else {
+					Pause();
+				}
 			}
 		}
 	}
 
 	public void Continuar(){
-		MenuPausaUI.SetActive(false);
-		Panel.SetActive(true);
 		Time.timeScale = 1f;
 		IsPaused = false;
 		GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = true;
+		MenuPausaUI.SetActive(false);
+		Panel.SetActive(true);
 	}
 
 	void Pause(){

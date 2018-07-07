@@ -46,14 +46,15 @@ public class GameManager : MonoBehaviour {
 		} catch (System.Exception e){
 			Debug.Log("MapManager not present in this scene.");
 		}
-
+		
+	
 		for (int i = 0; i < spawnArray.Length; i++){
 			if (spawnArray[i].GetComponent<Estacion>().ID == estacionActual){
 				GameObject spawn = spawnArray[i];
 				if (escena == 1){
 					player.transform.position = spawn.transform.position;
 				} else if (escena == 0){
-						mapManager.PinInicio = spawn.GetComponent<Pin>();
+					mapManager.PinInicio = spawn.GetComponent<Pin>();
 				}
 			}
 		}
