@@ -33,7 +33,6 @@ public class ClickMouse : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.Q))
         {
 			Continuar();
-			IsGalery = false;
         }
     }
     
@@ -44,24 +43,17 @@ public class ClickMouse : MonoBehaviour {
 		Time.timeScale = 0f;
 	}
 
-	void Continuar(){
+	public void Continuar(){
 		Time.timeScale = 1f;
 		GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled = true;
 		Cursor.visible = false;
 		Panel.SetActive(false);
 		Panel3.SetActive(true);
+		IsGalery = false;
 	}
 
 	public bool GetIsGalery() {
 		return IsGalery;
 	}
     
-    public void Quit()
-    {
-        #if UNITY_EDITOR 
-        EditorApplication.isPlaying = false;
-        #else 
-        Application.Quit();
-        #endif
-    }
 }

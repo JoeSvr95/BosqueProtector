@@ -9,9 +9,12 @@ public class ShowMessage : MonoBehaviour {
 	public GameObject Panel;
 	public Text arbol;
 	private bool ShowPanel;
+	public string texto;
+
 	// Use this for initialization
 	void Start () {
 		ShowPanel = false;
+		arbol.GetComponent<Text>().text = "Especie: " + texto + "\nClick en el árbol para más info";
 		Panel.SetActive(ShowPanel);
 	}
 	
