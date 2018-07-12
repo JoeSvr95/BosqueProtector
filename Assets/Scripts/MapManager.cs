@@ -42,7 +42,7 @@ public class MapManager : MonoBehaviour {
 
 	private void CheckForInput(){
 		if (Input.GetKeyUp(KeyCode.Return) && character.PinActual.estacion.ID != 0){
-			GameManager.instance.LoadScene(character.PinActual.estacion.ID);
+			StartCoroutine(GameManager.instance.LoadScene(character.PinActual.estacion.ID));
 			Panel.SetActive(true);
 			Cargando.text = string.Format("Entrando a la estación: " + character.PinActual.estacion.ID);
 		}

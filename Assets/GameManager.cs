@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject[] spawnArray;
 	public int estacionActual;
 	public int escena = 0;
+	public Animator transitionAnim;
 
 	void Awake () {
 		if (instance == null){
@@ -61,7 +62,9 @@ public class GameManager : MonoBehaviour {
 
 	}
 	
-	public void LoadScene(int estacion){
+	public IEnumerator LoadScene(int estacion){
+		transitionAnim.SetTrigger("end");
+		yield return new WaitForSeconds(1.5f);
 		estacionActual = estacion;
 
 		if (escena == 0){

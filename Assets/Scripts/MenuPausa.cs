@@ -45,6 +45,6 @@ public class MenuPausa : MonoBehaviour {
 	public void MenuMapa(){
 		Time.timeScale = 1f;
 		GameObject.Find("Audio").GetComponent<SoundManager>().PauseAudio();
-		GameManager.instance.LoadScene(GameManager.instance.estacionActual);
+		StartCoroutine(GameManager.instance.LoadScene(GameManager.instance.estacionActual));
 	}
 }
