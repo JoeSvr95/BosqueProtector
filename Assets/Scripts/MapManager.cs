@@ -27,7 +27,8 @@ public class MapManager : MonoBehaviour {
 	public Text Cargando;
 	public GameObject Panel;
 	public Text TextSensor;
-
+	public SceneChanger sceneChanger;
+	
 	private void Start(){
 		Panel.SetActive(false);
 		character.Iniciar(this, PinInicio);
@@ -42,11 +43,10 @@ public class MapManager : MonoBehaviour {
 
 	private void CheckForInput(){
 		if (Input.GetKeyUp(KeyCode.Return) && character.PinActual.estacion.ID != 0){
-			StartCoroutine(GameManager.instance.LoadScene(character.PinActual.estacion.ID));
 			Panel.SetActive(true);
 			Cargando.text = string.Format("Entrando a la estación: " + character.PinActual.estacion.ID);
-		}
-		else if (Input.GetKeyUp(KeyCode.UpArrow)){
+			sceneChanger.FadeToLevel(character.PinActual.estacion.ID);
+		} else if (Input.GetKeyUp(KeyCode.UpArrow)){
 			character.TrySetDireccion(Direccion.Arriba);
 		} else if (Input.GetKeyUp(KeyCode.DownArrow)){
 			character.TrySetDireccion(Direccion.Abajo);

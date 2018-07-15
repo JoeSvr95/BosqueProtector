@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour {
 	private static extern void StopAudio();
 
 	void Start(){
-		PlayAudio(GameManager.instance.estacionActual);
+		PlayAudio(GameManager.instance.currentStation);
 	}
 
 	public void PlayAudio(int id){

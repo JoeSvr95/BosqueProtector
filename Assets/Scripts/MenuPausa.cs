@@ -9,6 +9,7 @@ public class MenuPausa : MonoBehaviour {
 	private static  bool IsPaused = false;
 	public GameObject MenuPausaUI;
 	public GameObject Panel;
+	public SceneChanger sceneChanger;
 
 	void Update(){
 		bool bandera = ClickMouse.IsGalery;
@@ -45,6 +46,6 @@ public class MenuPausa : MonoBehaviour {
 	public void MenuMapa(){
 		Time.timeScale = 1f;
 		GameObject.Find("Audio").GetComponent<SoundManager>().PauseAudio();
-		StartCoroutine(GameManager.instance.LoadScene(GameManager.instance.estacionActual));
+		sceneChanger.FadeToLevel(GameManager.instance.currentStation);
 	}
 }

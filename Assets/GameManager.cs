@@ -9,9 +9,8 @@ public class GameManager : MonoBehaviour {
 	public MapManager mapManager;
 	public GameObject player;
 	public GameObject[] spawnArray;
-	public int estacionActual;
-	public int escena = 0;
-	public Animator transitionAnim;
+	public int currentStation;
+	public int scene;
 
 	void Awake () {
 		if (instance == null){
@@ -50,29 +49,20 @@ public class GameManager : MonoBehaviour {
 		
 	
 		for (int i = 0; i < spawnArray.Length; i++){
-			if (spawnArray[i].GetComponent<Estacion>().ID == estacionActual){
+			if (spawnArray[i].GetComponent<Estacion>().ID == currentStation){
 				GameObject spawn = spawnArray[i];
-				if (escena == 1){
-					player.transform.position = spawn.transform.position;
-				} else if (escena == 0){
-					mapManager.PinInicio = spawn.GetComponent<Pin>();
+				if (this.scene == 1){
+                    player.transform.position = spawn.transform.position;
+				} else if (this.scene == 0){
+                    mapManager.PinInicio = spawn.GetComponent<Pin>();
 				}
 			}
 		}
 
 	}
-	
-	public IEnumerator LoadScene(int estacion){
-		transitionAnim.SetTrigger("end");
-		yield return new WaitForSeconds(1.5f);
-		estacionActual = estacion;
 
-		if (escena == 0){
-			escena = 1;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		} else if (escena == 1){
-			escena = 0;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-		} 
+	public void SetCurrentStation(int station){
+		currentStation = station;
 	}
+
 }
