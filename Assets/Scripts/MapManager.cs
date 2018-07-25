@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Net;
+using System.Runtime.InteropServices;
 using System;
 
 [Serializable]
@@ -28,6 +28,9 @@ public class MapManager : MonoBehaviour {
 	public GameObject Panel;
 	public Text TextSensor;
 	public SceneChanger sceneChanger;
+
+	[DllImport("__Internal")]
+    private static extern string GetTemperature(int station_id);
 	
 	private void Start(){
 		Panel.SetActive(false);
@@ -59,15 +62,12 @@ public class MapManager : MonoBehaviour {
 
 	public void UpdateGUI(){
 		Estacion.text = string.Format("Estación: {0}", character.PinActual.estacion.ID);
-
 		/* 
 		if (character.PinActual.estacion.ID == 1 || character.PinActual.estacion.ID == 2 || character.PinActual.estacion.ID == 3){
 			string sUrlRequest = "http://200.126.14.250/api/Station/" + character.PinActual.estacion.ID + "/Data/lastData";
 			//string sUrlRequest = "http://200.126.14.250/api/Data/lastData";
-
 	        var json = new WebClient().DownloadString(sUrlRequest);
 	        Sensor datos = JsonUtility.FromJson<Sensor>(json);
-
 	        TextSensor.text = string.Format("Temperatura: {0} {1}", datos.Value, datos.Units);
 		}
 		*/

@@ -5,6 +5,11 @@ var csharp = {
 
     StopAudio: function() {
         stop_sound();
+    },
+
+    GetTemperature: function(station_id){
+        var temp = getTemp(station_id);
+        return temp;
     }
 }
 

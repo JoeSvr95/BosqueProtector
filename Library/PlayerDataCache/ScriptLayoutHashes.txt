@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/HOME/Documents/GitHub/BosqueProtector/BosqueVirtual
+C:/Users/Joe/Documents/Github/BosqueProtector/BosqueVirtual
 SceneListBegin?
 Assets/Scenes/Mapa.unity
 Assets/GreenForest/Scenes/Bosque.unity
@@ -21,6 +21,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 607d64d2c4bc76ac9876e6f7b9cc7edf UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.AICharacterControl
 7c4009185d1e3bcf3491adeea097f83e Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.FirstPerson.FirstPersonController
+2bae4be059e115ade45e216d0bd31bda Assembly-CSharp.dll:.lb_Bird
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.EventSystemChecker
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -89,6 +90,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 3ecea0c2e43f5d97a17c441bfcf59a7d Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingBehaviour
 6c156248975c65e334daa4cbfba64bd1 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectActivator
+97d5656bb9731dd7089d7d62bb025f27 Assembly-CSharp.dll:.lb_BirdController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -143,6 +145,7 @@ a90e94673f50d2237c1b971c138660c6 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 57fde8e76fc7bce23deb0e799d336be7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.SmoothFollow
 205965134a5874db410d674ebdf33ba7 Assembly-CSharp.dll:.ExampleWheelController
 5c2783c3a015d8e36f65b7b73e8d6614 Assembly-CSharp.dll:.Galery
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.lb_CrowProximity
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ObjectResetter
 1749a12c52489c176dafdc200ed381dd Assembly-CSharp.dll:.ClicArbol
@@ -193,5 +196,6 @@ a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 b5565a2226c2e10cec53a2c8abf2c448 Assembly-CSharp.dll:.SceneChanger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 beb9048248c35889c7bfd162195ccbdb Assembly-CSharp.dll:.SoundManager
+67d994b63ede74c1b9b9c5e9b7a58dcc Assembly-CSharp.dll:.livingBirdsDemoScript
 25171df6e0fb3bb4bfa5df588f03cea3 Assembly-CSharp.dll:.ClickMouse
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
