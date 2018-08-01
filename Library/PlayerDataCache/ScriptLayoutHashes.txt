@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/Joe/Documents/Github/BosqueProtector/BosqueVirtual
+C:/Users/Allan/Desktop/webgl
 SceneListBegin?
 Assets/Scenes/Mapa.unity
 Assets/GreenForest/Scenes/Bosque.unity
@@ -195,7 +195,7 @@ a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 0ad469aca31264c6140b1e503c43ab6b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectDestructor
 b5565a2226c2e10cec53a2c8abf2c448 Assembly-CSharp.dll:.SceneChanger
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
-beb9048248c35889c7bfd162195ccbdb Assembly-CSharp.dll:.SoundManager
+fee95d8725c19937370ce12bbcf41b9a Assembly-CSharp.dll:.SoundManager
 67d994b63ede74c1b9b9c5e9b7a58dcc Assembly-CSharp.dll:.livingBirdsDemoScript
 25171df6e0fb3bb4bfa5df588f03cea3 Assembly-CSharp.dll:.ClickMouse
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch

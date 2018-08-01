@@ -5,6 +5,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Runtime.InteropServices;
 using System;
+using UnityEngine.Networking;
+
+[Serializable]
+public class Station
+{
+    public string StationId;
+    public int Id;
+    public string APIKey;
+    public string Name;
+    public int GameStation;
+    public string Latitude;
+    public string Longitude;
+    public string AndroidVersion;
+    public string ServicesVersion;
+}
 
 [Serializable]
 public class Sensor
@@ -20,6 +35,12 @@ public class Sensor
     public string Location;
 }
 
+[Serializable]
+public class Stations
+{
+    public List<Station> estaciones;
+}
+
 public class MapManager : MonoBehaviour {
 	public Character character;
 	public Pin PinInicio;
@@ -28,11 +49,14 @@ public class MapManager : MonoBehaviour {
 	public GameObject Panel;
 	public Text TextSensor;
 	public SceneChanger sceneChanger;
+	public static Dictionary<int, int> diccionarioID = new Dictionary<int, int>();
+	public static Dictionary<int, String> diccionarioNombre = new Dictionary<int, String>();
 
 	[DllImport("__Internal")]
     private static extern string GetTemperature(int station_id);
 	
 	private void Start(){
+		StartCoroutine(GetStations());
 		Panel.SetActive(false);
 		character.Iniciar(this, PinInicio);
 	}
@@ -47,7 +71,10 @@ public class MapManager : MonoBehaviour {
 	private void CheckForInput(){
 		if (Input.GetKeyUp(KeyCode.Return) && character.PinActual.estacion.ID != 0){
 			Panel.SetActive(true);
-			Cargando.text = string.Format("Entrando a la estación: " + character.PinActual.estacion.ID);
+			if (diccionarioNombre.ContainsKey(character.PinActual.estacion.ID))
+			{
+				Cargando.text = string.Format("Entrando a: " + diccionarioNombre[character.PinActual.estacion.ID]);
+			}
 			sceneChanger.FadeToLevel(character.PinActual.estacion.ID);
 		} else if (Input.GetKeyUp(KeyCode.UpArrow)){
 			character.TrySetDireccion(Direccion.Arriba);
@@ -61,16 +88,97 @@ public class MapManager : MonoBehaviour {
 	}
 
 	public void UpdateGUI(){
-		Estacion.text = string.Format("Estación: {0}", character.PinActual.estacion.ID);
-		/* 
-		if (character.PinActual.estacion.ID == 1 || character.PinActual.estacion.ID == 2 || character.PinActual.estacion.ID == 3){
-			string sUrlRequest = "http://200.126.14.250/api/Station/" + character.PinActual.estacion.ID + "/Data/lastData";
-			//string sUrlRequest = "http://200.126.14.250/api/Data/lastData";
-	        var json = new WebClient().DownloadString(sUrlRequest);
-	        Sensor datos = JsonUtility.FromJson<Sensor>(json);
-	        TextSensor.text = string.Format("Temperatura: {0} {1}", datos.Value, datos.Units);
-		}
-		*/
+		StartCoroutine(GetTemp());
 	}
 
+	IEnumerator GetStations()
+    {
+		using (UnityWebRequest www = UnityWebRequest.Get("http://200.126.14.250/api/Station"))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string descarga = www.downloadHandler.text;
+                string JSONToParse = "{\"estaciones\":" + descarga + "}";
+                
+                Stations datos = JsonUtility.FromJson<Stations>(JSONToParse);
+
+                foreach (var dato in datos.estaciones)
+	            {
+	                if (!diccionarioID.ContainsKey(dato.GameStation))
+	                {
+	                    diccionarioID.Add(dato.GameStation, dato.Id);
+	                }
+
+	                if (!diccionarioNombre.ContainsKey(dato.GameStation))
+	                {
+	                    diccionarioNombre.Add(dato.GameStation, dato.Name);
+	                }
+	            }
+
+				foreach (KeyValuePair<int, int> kvp in diccionarioID)
+	            {
+	               	string prueba = "Key = " +  kvp.Key + ", Value =" +kvp.Value;
+	                Debug.Log(prueba);
+	            }
+            }
+        }
+	}
+
+	IEnumerator GetTemp()
+    {
+    	if (diccionarioID.ContainsKey(character.PinActual.estacion.ID))
+    	{
+    		Sensor datos1 = null;
+    		Sensor datos2 = null;
+
+    		using (UnityWebRequest www = UnityWebRequest.Get("http://200.126.14.250/api/station/" + diccionarioID[character.PinActual.estacion.ID] + "/sensor/2/data/lastdata"))
+	        {
+	            yield return www.SendWebRequest();
+
+	            if (www.isNetworkError || www.isHttpError)
+	            {
+	                Debug.Log(www.error);
+	            }
+	            else
+	            {
+	                string descarga = www.downloadHandler.text;
+	                string JSONToParse = descarga;
+	                
+	                datos1 = JsonUtility.FromJson<Sensor>(JSONToParse);
+	            }
+	        }
+
+	        using (UnityWebRequest www = UnityWebRequest.Get("http://200.126.14.250/api/station/" + diccionarioID[character.PinActual.estacion.ID] + "/sensor/1/data/lastdata"))
+	        {
+	            yield return www.SendWebRequest();
+
+	            if (www.isNetworkError || www.isHttpError)
+	            {
+	                Debug.Log(www.error);
+	            }
+	            else
+	            {
+	                string descarga = www.downloadHandler.text;
+	                string JSONToParse = descarga;
+	                
+	                datos2 = JsonUtility.FromJson<Sensor>(JSONToParse);
+	            }
+	        }
+
+	        TextSensor.text = string.Format("Temperatura: {0} {1}\n Humedad: {2} {3}", datos1.Value, datos1.Units, datos2.Value, datos2.Units);
+
+			Estacion.text = string.Format("{0}", diccionarioNombre[character.PinActual.estacion.ID]);
+    	}
+    	else
+		{
+			TextSensor.text = "";
+			Estacion.text = "";
+		}
+	}
 }

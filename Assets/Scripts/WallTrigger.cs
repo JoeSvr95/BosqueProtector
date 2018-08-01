@@ -10,10 +10,10 @@ public class WallTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(){
 		GameManager.instance.currentStation = station.ID;
-		GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
 		stationScreen.SetActive(true);
-		stationText.text = "Estás en la estación: " + station.ID;
+		stationText.text = MapManager.diccionarioNombre[station.ID];
 		StartCoroutine(LateCall());
+		GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
 	}
 
 	public IEnumerator LateCall(){
