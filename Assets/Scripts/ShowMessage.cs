@@ -23,18 +23,19 @@ public class ShowMessage : MonoBehaviour {
 		
 	}
 
-	public void OnTriggerEnter() {
-
-		ShowPanel = !ShowPanel;
-		Cursor.visible = true;
-	    Panel.SetActive(ShowPanel);
+	public void OnTriggerEnter(Collider col) {
+		if (col.tag == "Player"){
+			ShowPanel = !ShowPanel;
+			Cursor.visible = true;
+	    	Panel.SetActive(ShowPanel);
+		}
 	}
 
-	public void OnTriggerExit() {
-
-		ShowPanel = !ShowPanel;
-		Cursor.visible = false;
-	    Panel.SetActive(ShowPanel);
-		
+	public void OnTriggerExit(Collider col) {
+		if (col.tag == "Player"){
+			ShowPanel = !ShowPanel;
+			Cursor.visible = false;
+	    	Panel.SetActive(ShowPanel);
+		}
 	}
 }

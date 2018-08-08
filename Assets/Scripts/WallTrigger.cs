@@ -9,11 +9,13 @@ public class WallTrigger : MonoBehaviour {
 	public Text stationText;
 
 	void OnTriggerEnter(){
-		GameManager.instance.currentStation = station.ID;
-		stationScreen.SetActive(true);
-		stationText.text = MapManager.diccionarioNombre[station.ID];
-		StartCoroutine(LateCall());
-		GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
+		if (GameManager.instance.currentStation != station.ID){
+			GameManager.instance.currentStation = station.ID;
+			stationScreen.SetActive(true);
+			stationText.text = MapManager.diccionarioNombre[station.ID];
+			StartCoroutine(LateCall());
+			GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
+		}
 	}
 
 	public IEnumerator LateCall(){

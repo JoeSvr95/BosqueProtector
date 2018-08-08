@@ -1329,7 +1329,6 @@ GameObject:
   - component: {fileID: 184484573}
   - component: {fileID: 184484572}
   - component: {fileID: 184484571}
-  - component: {fileID: 184484570}
   - component: {fileID: 184484569}
   m_Layer: 0
   m_Name: Wall
@@ -1367,18 +1366,6 @@ MonoBehaviour:
   station: {fileID: 1343715405}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &184484570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 184484567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &184484571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1720,7 +1707,6 @@ GameObject:
   - component: {fileID: 236006165}
   - component: {fileID: 236006164}
   - component: {fileID: 236006163}
-  - component: {fileID: 236006162}
   - component: {fileID: 236006161}
   m_Layer: 0
   m_Name: Wall (7)
@@ -1758,18 +1744,6 @@ MonoBehaviour:
   station: {fileID: 543883158}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &236006162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 236006159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &236006163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1927,7 +1901,6 @@ GameObject:
   - component: {fileID: 250106426}
   - component: {fileID: 250106425}
   - component: {fileID: 250106424}
-  - component: {fileID: 250106423}
   - component: {fileID: 250106422}
   m_Layer: 0
   m_Name: Wall (6)
@@ -1965,18 +1938,6 @@ MonoBehaviour:
   station: {fileID: 1722263489}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &250106423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 250106420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &250106424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2432,7 +2393,6 @@ GameObject:
   - component: {fileID: 306143558}
   - component: {fileID: 306143557}
   - component: {fileID: 306143556}
-  - component: {fileID: 306143555}
   - component: {fileID: 306143554}
   m_Layer: 0
   m_Name: Wall (3)
@@ -2470,18 +2430,6 @@ MonoBehaviour:
   station: {fileID: 1552428882}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &306143555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 306143552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &306143556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2551,7 +2499,6 @@ GameObject:
   - component: {fileID: 317866366}
   - component: {fileID: 317866365}
   - component: {fileID: 317866364}
-  - component: {fileID: 317866363}
   - component: {fileID: 317866362}
   m_Layer: 0
   m_Name: Wall (10)
@@ -2589,18 +2536,6 @@ MonoBehaviour:
   station: {fileID: 345205105}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &317866363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 317866360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &317866364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3141,7 +3076,6 @@ GameObject:
   - component: {fileID: 341689741}
   - component: {fileID: 341689740}
   - component: {fileID: 341689739}
-  - component: {fileID: 341689738}
   - component: {fileID: 341689737}
   m_Layer: 0
   m_Name: Wall (1)
@@ -3179,18 +3113,6 @@ MonoBehaviour:
   station: {fileID: 543743569}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &341689738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 341689735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &341689739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3448,7 +3370,6 @@ GameObject:
   - component: {fileID: 368142760}
   - component: {fileID: 368142759}
   - component: {fileID: 368142758}
-  - component: {fileID: 368142757}
   - component: {fileID: 368142756}
   m_Layer: 0
   m_Name: Wall (4)
@@ -3486,18 +3407,6 @@ MonoBehaviour:
   station: {fileID: 1552428882}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &368142757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 368142754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &368142758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4774,7 +4683,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.13830678
+      value: 0.90101844
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.z
@@ -4782,7 +4691,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.99038947
+      value: 0.43378085
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
@@ -4790,7 +4699,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -15.900001
+      value: 128.585
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_UseHeadBob
@@ -7235,7 +7144,6 @@ GameObject:
   - component: {fileID: 952064701}
   - component: {fileID: 952064700}
   - component: {fileID: 952064699}
-  - component: {fileID: 952064698}
   - component: {fileID: 952064697}
   m_Layer: 0
   m_Name: Wall (9)
@@ -7273,18 +7181,6 @@ MonoBehaviour:
   station: {fileID: 345205105}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &952064698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952064695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &952064699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10313,7 +10209,6 @@ GameObject:
   - component: {fileID: 1287707586}
   - component: {fileID: 1287707585}
   - component: {fileID: 1287707584}
-  - component: {fileID: 1287707583}
   - component: {fileID: 1287707582}
   m_Layer: 0
   m_Name: Wall (5)
@@ -10351,18 +10246,6 @@ MonoBehaviour:
   station: {fileID: 1552428882}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &1287707583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1287707580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1287707584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13147,7 +13030,6 @@ GameObject:
   - component: {fileID: 1577773255}
   - component: {fileID: 1577773254}
   - component: {fileID: 1577773253}
-  - component: {fileID: 1577773252}
   - component: {fileID: 1577773251}
   m_Layer: 0
   m_Name: Wall (2)
@@ -13185,18 +13067,6 @@ MonoBehaviour:
   station: {fileID: 543743569}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &1577773252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1577773249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1577773253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15607,7 +15477,6 @@ GameObject:
   - component: {fileID: 1849097179}
   - component: {fileID: 1849097178}
   - component: {fileID: 1849097177}
-  - component: {fileID: 1849097176}
   - component: {fileID: 1849097175}
   m_Layer: 0
   m_Name: Wall (8)
@@ -15645,18 +15514,6 @@ MonoBehaviour:
   station: {fileID: 543883158}
   stationScreen: {fileID: 1471696681}
   stationText: {fileID: 419226143}
---- !u!114 &1849097176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114467439028298272, guid: dacecf7a5a5f089468269841ab1045bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1849097173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1849097177
 BoxCollider:
   m_ObjectHideFlags: 0
