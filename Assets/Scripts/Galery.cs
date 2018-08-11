@@ -21,7 +21,7 @@ public class Galery : MonoBehaviour {
         {
 			CargarImagen(1);
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
 			CargarImagen(-1);
         }
@@ -30,11 +30,11 @@ public class Galery : MonoBehaviour {
 	public void CargarImagen (int num) {
 		imagenActual += num;
 		if (imagenActual >= imagenes.Length) {
-			imagenActual = imagenes.Length - 1;
-		}
-		if (imagenActual < 0) {
 			imagenActual = 0;
 		}
-		imagen.GetComponent<Image>().sprite= imagenes[imagenActual];
+		else if (imagenActual < 0) {
+			imagenActual = 0;
+		}
+		imagen.GetComponent<Image>().sprite = imagenes[imagenActual];
 	}
 }
