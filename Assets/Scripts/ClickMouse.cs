@@ -11,9 +11,20 @@ using UnityEditor;
 public class ClickMouse : MonoBehaviour {
 
 	public GameObject Panel;
-	public GameObject Panel2;
 	public GameObject Panel3;
 	public static bool IsGalery = false;
+
+	public string titulo;
+	public string cuerpo;
+	public Text txttitulo;
+	public Text txtcuerpo;
+
+
+	public Sprite[] imagenes;
+	public int imagenActual = 0;
+	public GameObject imagen;
+	Sprite[] imagenes2;
+
 
 	void Start () {
 		Panel.SetActive(false);		
@@ -21,8 +32,12 @@ public class ClickMouse : MonoBehaviour {
 
     void OnMouseDown ()
     {
+    	imagenActual = 0;
+    	txttitulo.GetComponent<Text>().text = titulo;
+    	txtcuerpo.GetComponent<Text>().text = cuerpo;
+        imagenes2 = imagenes;
+        CargarImagen(0);
         Panel.SetActive(true);
-        Panel2.SetActive(false);
         Panel3.SetActive(false);
         IsGalery = true;
         Pause();
@@ -33,7 +48,20 @@ public class ClickMouse : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.Q))
         {
 			Continuar();
+			imagenActual = 0;
+			limpiarArreglo();
         }
+        if (IsGalery) {
+        	if (Input.GetKeyUp(KeyCode.RightArrow))
+	        {
+				CargarImagen(1);
+	        }
+	        if (Input.GetKeyUp(KeyCode.LeftArrow))
+	        {
+				CargarImagen(-1);
+	        }
+        }
+        
     }
     
     public void Pause(){
@@ -54,6 +82,24 @@ public class ClickMouse : MonoBehaviour {
 
 	public bool GetIsGalery() {
 		return IsGalery;
+	}
+
+	public void CargarImagen (int num) {
+		imagenActual += num;
+		if (imagenActual >= imagenes2.Length) {
+			imagenActual = imagenes2.Length - 1;
+		}
+		if (imagenActual < 0) {
+			imagenActual = 0;
+		}
+		imagen.GetComponent<Image>().sprite= imagenes2[imagenActual];
+	}
+
+	public void limpiarArreglo (){
+		for ( int i = 0; i < imagenes2.Length; i++)
+			{
+			imagenes2[i] = null;
+			}
 	}
     
 }
