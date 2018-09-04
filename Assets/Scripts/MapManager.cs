@@ -50,8 +50,11 @@ public class MapManager : MonoBehaviour {
 	public GameObject Canvas;
 	public Text TextSensor;
 	public SceneChanger sceneChanger;
+	//GameStation es el ID
 	public static Dictionary<int, int> diccionarioID = new Dictionary<int, int>();
 	public static Dictionary<int, String> diccionarioNombre = new Dictionary<int, String>();
+   	bool flagT = false;
+   	bool flagH = false;
 
 	[DllImport("__Internal")]
     private static extern string GetTemperature(int station_id);
@@ -60,6 +63,8 @@ public class MapManager : MonoBehaviour {
 		StartCoroutine(GetStations());
 		Panel.SetActive(false);
 		character.Iniciar(this, PinInicio);
+		flagT = false;
+		flagH = false;
 	}
 
 	public void Update(){
@@ -154,7 +159,8 @@ public class MapManager : MonoBehaviour {
 	                try {
 						datos1 = JsonUtility.FromJson<Sensor>(descarga);
 					} catch (System.Exception){
-						Debug.Log("No hay datos");
+						flagT = true;
+						Debug.Log("No hay datos de Temperatura en la estacion " + diccionarioNombre[character.PinActual.estacion.ID]);
 					}
 	            }
 	        }
@@ -174,14 +180,25 @@ public class MapManager : MonoBehaviour {
 	                try {
 	                	datos2 = JsonUtility.FromJson<Sensor>(descarga);
 					} catch (System.Exception){
-						Debug.Log("No hay datos");
+						flagH = true;
+						Debug.Log("No hay datos de Humedad en la estacion " + diccionarioNombre[character.PinActual.estacion.ID]);
 					}
 	            }
 	        }
 
-	        TextSensor.text = string.Format("Temperatura: {0} {1}\nHumedad: {2} {3}", datos1.Value, datos1.Units, datos2.Value, datos2.Units);
+	        if (flagT & flagH){
+	        	TextSensor.text = string.Format("Temperatura:\nHumedad:");
+	        } else if (flagT) {
+	        	TextSensor.text = string.Format("Humedad: {2} {3}", datos2.Value, datos2.Units);
+	        } else if (flagH) {
+	        	TextSensor.text = string.Format("Temperatura: {0} {1}", datos1.Value, datos1.Units);
+	        } else {
+	        	TextSensor.text = string.Format("Temperatura: {0} {1}\nHumedad: {2} {3}", datos1.Value, datos1.Units, datos2.Value, datos2.Units);
+	        }
 
 			Estacion.text = string.Format("{0}", diccionarioNombre[character.PinActual.estacion.ID]);
+			flagT = false;
+			flagH = false;
     	}
     	else
 		{
