@@ -12,14 +12,21 @@ public class WallTrigger : MonoBehaviour {
 		if (GameManager.instance.currentStation != station.ID){
 			GameManager.instance.currentStation = station.ID;
 			stationScreen.SetActive(true);
-			stationText.text = MapManager.diccionarioNombre[station.ID];
-			StartCoroutine(LateCall());
-			GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(station.ID);
+			if (MapManager.diccionarioNombre.ContainsKey(station.ID)){
+				stationText.text = MapManager.diccionarioNombre[station.ID];
+				StartCoroutine(LateCall());
+				//Debug.Log(MapManager.diccionarioID[station.ID]);
+				GameObject.Find("Audio").GetComponent<SoundManager>().PlayAudio(MapManager.diccionarioID[station.ID]);
+			}
+			else {
+				stationText.text = "Estación sin nombre";
+				StartCoroutine(LateCall());
+			}
 		}
 	}
 
 	public IEnumerator LateCall(){
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(2);
 		stationScreen.SetActive(false);
 	}
 }

@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 		
 		try {
 			mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
-		} catch (System.Exception e){
+		} catch (System.Exception){
 			Debug.Log("MapManager not present in this scene.");
 		}
 		

@@ -24,7 +24,7 @@ public class lb_BirdController : MonoBehaviour {
 	GameObject[] myBirds;
 	List<string> myBirdTypes = new List<string>();
 	List<GameObject>  birdGroundTargets = new List<GameObject>();
-	List<GameObject> birdPerchTargets = new List<GameObject>();
+	//List<GameObject> birdPerchTargets = new List<GameObject>();
 	int activeBirds = 0;
 	int birdIndex = 0;
 	GameObject[] featherEmitters = new GameObject[3];
@@ -124,18 +124,18 @@ public class lb_BirdController : MonoBehaviour {
 
 		//find all the targets
 		GameObject[] groundTargets = GameObject.FindGameObjectsWithTag("lb_groundTarget");
-		GameObject[] perchTargets = GameObject.FindGameObjectsWithTag("lb_perchTarget");
+		//GameObject[] perchTargets = GameObject.FindGameObjectsWithTag("lb_perchTarget");
 
 		for (int i=0;i<groundTargets.Length;i++){
 			if(Vector3.Distance (groundTargets[i].transform.position,currentCamera.transform.position)<unspawnDistance){
 				birdGroundTargets.Add(groundTargets[i]);
 			}
 		}
-		for (int i=0;i<perchTargets.Length;i++){
-			if(Vector3.Distance (perchTargets[i].transform.position,currentCamera.transform.position)<unspawnDistance){
-				birdPerchTargets.Add(perchTargets[i]);
-			}
-		}
+		//for (int i=0;i<perchTargets.Length;i++){
+		//	if(Vector3.Distance (perchTargets[i].transform.position,currentCamera.transform.position)<unspawnDistance){
+		//		birdPerchTargets.Add(perchTargets[i]);
+		//	}
+		//}
 
 		//instantiate 3 feather emitters for killing the birds
 		GameObject fEmitter = Resources.Load ("featherEmitter",typeof(GameObject)) as GameObject;
@@ -201,19 +201,19 @@ public class lb_BirdController : MonoBehaviour {
 				}
 				yield return 0;
 			}
-			for (int i=0;i<birdPerchTargets.Count;i++){
-				if (Vector3.Distance (birdPerchTargets[i].transform.position,currentCamera.transform.position)>unspawnDistance){
-					ptRemove.Add (birdPerchTargets[i]);
-				}
-				yield return 0;
-			}
+			//for (int i=0;i<birdPerchTargets.Count;i++){
+			//	if (Vector3.Distance (birdPerchTargets[i].transform.position,currentCamera.transform.position)>unspawnDistance){
+			//		ptRemove.Add (birdPerchTargets[i]);
+			//	}
+			//	yield return 0;
+			//}
 			//remove any targets that have been found out of range
 			foreach (GameObject entry in gtRemove){
 				birdGroundTargets.Remove(entry);
 			}
-			foreach (GameObject entry in ptRemove){
-				birdPerchTargets.Remove(entry);
-			}
+			//foreach (GameObject entry in ptRemove){
+			//	birdPerchTargets.Remove(entry);
+			//}
 			yield return 0;
 			//now check for any new Targets
 			Collider[] hits = Physics.OverlapSphere(currentCamera.transform.position,unspawnDistance);
@@ -221,9 +221,9 @@ public class lb_BirdController : MonoBehaviour {
 				if (hit.tag == "lb_groundTarget" && !birdGroundTargets.Contains (hit.gameObject)){
 					birdGroundTargets.Add (hit.gameObject);
 				}
-				if (hit.tag == "lb_perchTarget" && !birdPerchTargets.Contains (hit.gameObject)){
-					birdPerchTargets.Add (hit.gameObject);
-				}
+				//if (hit.tag == "lb_perchTarget" && !birdPerchTargets.Contains (hit.gameObject)){
+				//	birdPerchTargets.Add (hit.gameObject);
+				//}
 			}
 			yield return 0;
 		}
@@ -275,7 +275,7 @@ public class lb_BirdController : MonoBehaviour {
 	}
 
 	bool AreThereActiveTargets(){
-		if (birdGroundTargets.Count > 0 || birdPerchTargets.Count > 0){
+		if (birdGroundTargets.Count > 0){ //|| birdPerchTargets.Count > 0){
 			return true;
 		}else{
 			return false;
@@ -303,23 +303,23 @@ public class lb_BirdController : MonoBehaviour {
 	
 	void BirdFindTarget(GameObject bird){
 		//yield return new WaitForSeconds(1);
-		GameObject target;
-		if (birdGroundTargets.Count > 0 || birdPerchTargets.Count > 0){
+		//GameObject target;
+		if (birdGroundTargets.Count > 0){ //|| birdPerchTargets.Count > 0){
 			//pick a random target based on the number of available targets vs the area of ground targets
 			//each perch target counts for .3 area, each ground target's area is calculated
 			float gtArea=0.0f;
-			float ptArea=birdPerchTargets.Count*0.3f;
+			//float ptArea=birdPerchTargets.Count*0.3f;
 
 			for (int i=0;i<birdGroundTargets.Count;i++){
 				gtArea += birdGroundTargets[i].GetComponent<Collider>().bounds.size.x*birdGroundTargets[i].GetComponent<Collider>().bounds.size.z;
 			}
-			if (ptArea == 0.0f || Random.value < gtArea/(gtArea+ptArea)){
-				target = birdGroundTargets[Mathf.FloorToInt (Random.Range (0,birdGroundTargets.Count))];
-				bird.SendMessage ("FlyToTarget",FindPointInGroundTarget(target));
-			}else{
-				target = birdPerchTargets[Mathf.FloorToInt (Random.Range (0,birdPerchTargets.Count))];
-				bird.SendMessage ("FlyToTarget",target.transform.position);
-			}
+			//if (ptArea == 0.0f || Random.value < gtArea/(gtArea+ptArea)){
+			//	target = birdGroundTargets[Mathf.FloorToInt (Random.Range (0,birdGroundTargets.Count))];
+			//	bird.SendMessage ("FlyToTarget",FindPointInGroundTarget(target));
+			//}else{
+				//target = birdPerchTargets[Mathf.FloorToInt (Random.Range (0,birdPerchTargets.Count))];
+				//bird.SendMessage ("FlyToTarget",target.transform.position);
+			//}
 		}else{
 			bird.SendMessage ("FlyToTarget",currentCamera.transform.position+new Vector3(Random.Range (-100,100),Random.Range (5,10),Random.Range(-100,100)));
 		}

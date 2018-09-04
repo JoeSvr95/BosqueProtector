@@ -15,13 +15,8 @@ public class SoundManager : MonoBehaviour {
 	private static extern void StopAudio();
 
 	void Start(){
-		if (MapManager.diccionarioID[GameManager.instance.currentStation] == 17)
-		{
-			prueba.text = string.Format("{0}", MapManager.diccionarioNombre[GameManager.instance.currentStation]);
-			PlayAudio(GameManager.instance.currentStation);
-		}
-
-		//PlayAudio(MapManager.diccionarioID[GameManager.instance.currentStation]);
+		//Debug.Log(MapManager.diccionarioID[GameManager.instance.currentStation]);
+		PlayAudio(MapManager.diccionarioID[GameManager.instance.currentStation]);
 	}
 
 	public void PlayAudio(int id){

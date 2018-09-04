@@ -47,6 +47,7 @@ public class MapManager : MonoBehaviour {
 	public Text Estacion;
 	public Text Cargando;
 	public GameObject Panel;
+	public GameObject Canvas;
 	public Text TextSensor;
 	public SceneChanger sceneChanger;
 	public static Dictionary<int, int> diccionarioID = new Dictionary<int, int>();
@@ -74,6 +75,7 @@ public class MapManager : MonoBehaviour {
 			if (diccionarioNombre.ContainsKey(character.PinActual.estacion.ID))
 			{
 				Cargando.text = string.Format("Entrando a: " + diccionarioNombre[character.PinActual.estacion.ID]);
+				Canvas.SetActive(false);
 			}
 			sceneChanger.FadeToLevel(character.PinActual.estacion.ID);
 		} else if (Input.GetKeyUp(KeyCode.UpArrow)){
@@ -148,9 +150,12 @@ public class MapManager : MonoBehaviour {
 	            else
 	            {
 	                string descarga = www.downloadHandler.text;
-	                string JSONToParse = descarga;
-	                
-	                datos1 = JsonUtility.FromJson<Sensor>(JSONToParse);
+
+	                try {
+						datos1 = JsonUtility.FromJson<Sensor>(descarga);
+					} catch (System.Exception){
+						Debug.Log("No hay datos");
+					}
 	            }
 	        }
 
@@ -165,13 +170,16 @@ public class MapManager : MonoBehaviour {
 	            else
 	            {
 	                string descarga = www.downloadHandler.text;
-	                string JSONToParse = descarga;
 	                
-	                datos2 = JsonUtility.FromJson<Sensor>(JSONToParse);
+	                try {
+	                	datos2 = JsonUtility.FromJson<Sensor>(descarga);
+					} catch (System.Exception){
+						Debug.Log("No hay datos");
+					}
 	            }
 	        }
 
-	        TextSensor.text = string.Format("Temperatura: {0} {1}\n Humedad: {2} {3}", datos1.Value, datos1.Units, datos2.Value, datos2.Units);
+	        TextSensor.text = string.Format("Temperatura: {0} {1}\nHumedad: {2} {3}", datos1.Value, datos1.Units, datos2.Value, datos2.Units);
 
 			Estacion.text = string.Format("{0}", diccionarioNombre[character.PinActual.estacion.ID]);
     	}
