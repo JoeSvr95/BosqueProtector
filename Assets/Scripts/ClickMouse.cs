@@ -27,13 +27,15 @@ public class ClickMouse : MonoBehaviour {
 
     void OnMouseDown ()
     {
-    	txttitulo.GetComponent<Text>().text = titulo;
-    	txtcuerpo.GetComponent<Text>().text = cuerpo;
-        Panel.SetActive(true);
-        Galeria.SetActive(true);
-        Panel3.SetActive(false);
-        IsGalery = true;
-        Pause();
+    	if (MenuPausa.IsPaused == false) {
+	    	txttitulo.GetComponent<Text>().text = titulo;
+	    	txtcuerpo.GetComponent<Text>().text = cuerpo;
+	        Panel.SetActive(true);
+	        Galeria.SetActive(true);
+	        Panel3.SetActive(false);
+	        IsGalery = true;
+	        Pause();
+    	}
     }
 
 	void Update()
