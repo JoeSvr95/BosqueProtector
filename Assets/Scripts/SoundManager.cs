@@ -15,7 +15,6 @@ public class SoundManager : MonoBehaviour {
 	private static extern void StopAudio();
 
 	void Start(){
-		//Debug.Log(MapManager.diccionarioID[GameManager.instance.currentStation]);
 		PlayAudio(MapManager.diccionarioID[GameManager.instance.currentStation]);
 	}
 

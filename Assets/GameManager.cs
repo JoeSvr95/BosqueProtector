@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour {
 				GameObject spawn = spawnArray[i];
 				if (this.scene == 1){
                     player.transform.position = spawn.transform.position;
+					//player.transform.rotation = spawn.transform.rotation;
 				} else if (this.scene == 0){
                     mapManager.PinInicio = spawn.GetComponent<Pin>();
 				}
